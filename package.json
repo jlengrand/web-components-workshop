@@ -1,0 +1,31 @@
+{
+  "name": "web-components-workshop",
+  "version": "1.0.0",
+  "description": "A short workshop on web components, with exercises",
+  "main": "index.html",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./node_modules/.bin/http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlengrand/web-components-workshop.git"
+  },
+  "keywords": [
+    "web-components",
+    "shadydom",
+    "shadowdom",
+    "custom-elements",
+    "polymer"
+  ],
+  "author": "Julien Lengrand-Lambert <julien@lengrand.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlengrand/web-components-workshop/issues"
+  },
+  "homepage": "https://github.com/jlengrand/web-components-workshop#readme"
+}

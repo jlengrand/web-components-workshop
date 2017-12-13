@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="src/components/cat-img.js"></script>
+    </head>
+
+    <body>
+        <h1>WebComponents workshop</h1>
+        <p>In this workshop, we will create new custom HTML Components</p>
+
+        <cat-img></cat-img>
+
+        <hr>
+        <div>
+            <button onclick="removeCatImg()">Click me to remove CatImg</button>
+        </div>
+
+        <div>
+            <input type="text" id="cat-img-param" value="SensorFact">        
+            <button onclick="changeCatImgParam()">Click me to change CatImg's parameter</button>        
+        </div>   
+        <hr>
+        
+        <script>
+            function removeCatImg(){
+                const catImgElement = document.getElementsByTagName("cat-img")[0];
+                catImgElement.parentNode.removeChild(catImgElement);
+            }
+        </script>
+        <script>
+            function changeCatImgParam(){
+                const catImgElement = document.getElementsByTagName("cat-img")[0];
+                const catImgParam = document.getElementById("cat-img-param").value;
+                document.getElementsByTagName("cat-img")[0].setAttribute("name", catImgParam);
+            }
+        </script>
+    </body>
+</html>
