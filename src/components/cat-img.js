@@ -1,25 +1,45 @@
 class CatImgElement extends HTMLElement {
-    static get observedAttributes() {return ['name']; }
+    static get observedAttributes() {return ['xsize', 'ysize']; }
     
     constructor(){
-        super()
-    }    
+        super();
+
+        this.xsize = '400';
+        this.ysize = '200';
+    }
 
     connectedCallback(){
-        this.innerHTML = `<h1>Hello default!</h1>`;        
+        this.render();
     }
 
     attributeChangedCallback(attributeName, oldValue, newValue, namespace){
-        if(attributeName === "name"){
-            console.log("Attribute name changed!");
-            this.innerHTML = `<h1>Hello ${newValue} !</h1>`;            
-        }
-        else{
-            console.log("Unknown attribute " + attributeName + "changed");
-        }
+        this.render();        
     }    
 
     disconnectedCallback(){
+    }
+
+    render(){
+        console.log(`rendering with size ${this.xsize} ${this.ysize}`);
+        this.innerHTML = `
+        <h1>Here comes an image of a cat</h1>
+        <img src="http://lorempixel.com/${this.xsize}/${this.ysize}/cats"</img>`;
+    }
+
+    get xsize(){
+        return this.getAttribute('xsize');            
+    }
+
+    set xsize(xSize){
+        this.setAttribute('xsize', xSize);
+    }
+
+    get ysize(){
+        return this.getAttribute('ysize');            
+    }
+
+    set ysize(ySize){
+        this.setAttribute('ysize', ySize);
     }
 }
 
